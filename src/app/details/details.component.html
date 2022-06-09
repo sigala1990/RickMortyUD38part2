@@ -1,0 +1,66 @@
+<div class="row featurette m-5 d-flex justify-content-center">
+    <div class="col-md-5 order-md-2">
+      <h2 class="featurette-heading fw-normal"><b>Name: </b>{{character.name}}</h2>
+      <p class="lead" style="display:block"><b>Status: </b> <em>{{character.status}}</em></p>
+      <p class="lead" style="display:block"><b>Specie: </b> <em>{{character.species}}</em></p>
+      <p class="lead" style="display:block"><b>Gender: </b> <em>{{character.gender}}</em></p>
+      <p class="lead" style="display:block"><b>Origin: </b> <em>{{character.origin.name}}</em></p>
+      <p class="lead" style="display:block"><b>Location: </b> <em>{{character.location.name}}</em></p>
+    </div>
+    <div class="col-md-4 order-md-1">
+      <img src="{{character.image}}" alt="">
+    </div>
+  </div>
+
+
+<!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-3 m-5" *ngIf="character!=null; else espera">
+  <table class="table col-10 text-center">
+    <tr *ngFor="let char of character | keyvalue ">
+      <div *ngIf="char.key == 'image'">
+        <td>{{char.key}}</td>
+        <td><img src="{{char.value}}"></td>
+      </div>
+    </tr>
+    <tr *ngFor="let char of character | keyvalue ">
+
+      <div *ngIf="char.key != 'image'">
+        <td>{{char.key}}</td>
+        <td>{{char.value}}</td>
+      </div>
+
+      <div *ngIf="char.key == 'location'">
+        <tr *ngFor="let location of char | keyvalue">
+        <td>{{location.key}}</td>
+        <td>{{location.value}}</td>
+      </tr>
+      </div>
+    </tr>
+
+  </table>
+</div> -->
+
+
+
+<!--
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-3 m-5" *ngIf="character!=null; else espera">
+<table  class="table col-10 text-center">
+  <tr  *ngFor="let char of character | keyvalue ">
+     <td *ngIf="char.key == 'image'">{{char.key}}</td>
+    <td *ngIf="char.key == 'image'"><img src="{{char.value}}"></td>
+  </tr>
+  <tr *ngFor="let char of character | keyvalue">
+     <td  *ngIf="char.key != 'image'">{{char.key}}</td>
+    <td  *ngIf="char.key != 'image'">{{char.value}}</td>
+  </tr>
+</table>
+</div> -->
+
+
+<ng-template #espera>
+  <div class="text-center mt-5">
+    <button class="btn btn-primary" type="button" disabled>
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      Loading...
+    </button>
+  </div>
+</ng-template>
